@@ -1,0 +1,30 @@
+[INFO]: Run Directory: /openlane/designs/design_mux/runs/run1
+[INFO]: Saving runtime environment...
+[INFO]: Preparing LEF files for the nom corner...
+[INFO]: Preparing LEF files for the min corner...
+[INFO]: Preparing LEF files for the max corner...
+[WARNING]: PNR_SDC_FILE is not set. It is recommended to write a custom SDC file for the design. Defaulting to BASE_SDC_FILE
+[WARNING]: SIGNOFF_SDC_FILE is not set. It is recommended to write a custom SDC file for the design. Defaulting to BASE_SDC_FILE
+[INFO]: Running Synthesis (log: designs/design_mux/runs/run1/logs/synthesis/1-synthesis.log)...
+[ERROR]: during executing yosys script /openlane/scripts/yosys/synth.tcl
+[ERROR]: Log: designs/design_mux/runs/run1/logs/synthesis/1-synthesis.log
+[ERROR]: Last 10 lines:
+3. Executing Verilog-2005 frontend: /openlane/designs/design_mux/src/design_mux.v
+Parsing SystemVerilog input from `/openlane/designs/design_mux/src/design_mux.v' to AST representation.
+Storing AST representation for module `$abstract\spi_slave'.
+Storing AST representation for module `$abstract\raven_spi'.
+Storing AST representation for module `$abstract\design_mux'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /openlane/designs/design_mux/src/spi_slave.v
+/openlane/designs/design_mux/src/spi_slave.v:53: ERROR: Re-definition of module `$abstract\spi_slave'!
+child process exited abnormally
+
+[ERROR]: Creating issue reproducible...
+[INFO]: Saving runtime environment...
+[INFO]: Reproducible packaged: Please tarball and upload 'designs/design_mux/runs/run1/issue_reproducible' if you're going to submit an issue.
+[INFO]: Using configuration in 'designs/design_mux/config.tcl'...
+[INFO]: PDK Root: /root/.volare
+[INFO]: Process Design Kit: sky130A
+[INFO]: Standard Cell Library: sky130_fd_sc_hd
+[INFO]: Optimization Standard Cell Library: sky130_fd_sc_hd

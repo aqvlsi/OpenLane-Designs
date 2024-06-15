@@ -1,0 +1,16 @@
+
+49. Printing statistics.
+
+=== car_park ===
+
+   Number of wires:                 11
+   Number of wire bits:             25
+   Number of public wires:           3
+   Number of public wire bits:      17
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 16
+     $_DFFE_PP_                      8
+     $_NOT_                          8
+

@@ -1,0 +1,48 @@
+Mon May 20 18:00:09 +0000 2024 - Executing "{openroad -exit -no_init -python /openlane/scripts/odbpy/lefutil.py get_metal_layers -o /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/tmp/layers.list /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef}"
+
+Mon May 20 18:00:10 +0000 2024 - Executing "{/openlane/scripts/mergeLef.py -o /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/tmp/merged.nom.lef -i /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef {/root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef} |& tee /dev/null}"
+
+Mon May 20 18:00:10 +0000 2024 - Executing "{/openlane/scripts/mergeLef.py -o /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/tmp/merged.min.lef -i /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__min.tlef {/root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef} |& tee /dev/null}"
+
+Mon May 20 18:00:10 +0000 2024 - Executing "{/openlane/scripts/mergeLef.py -o /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/tmp/merged.max.lef -i /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__max.tlef {/root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef} |& tee /dev/null}"
+
+Mon May 20 18:00:10 +0000 2024 - Executing "{python3 /openlane/scripts/mergeLib.py --output /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/tmp/synthesis/merged.lib --name sky130A_merged /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib}"
+
+Mon May 20 18:00:11 +0000 2024 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/tmp/synthesis/trimmed.lib.exclude.list --output /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/tmp/synthesis/trimmed.lib /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/tmp/synthesis/merged.lib}"
+
+Mon May 20 18:00:11 +0000 2024 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/tmp/cts/cts.lib.exclude.list --output /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/tmp/cts/cts.lib /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib}"
+
+Mon May 20 18:00:11 +0000 2024 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/tmp/cts/cts-fastest.lib.exclude.list --output /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/tmp/cts/cts-fastest.lib /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib}"
+
+Mon May 20 18:00:12 +0000 2024 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/tmp/cts/cts-slowest.lib.exclude.list --output /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/tmp/cts/cts-slowest.lib /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib}"
+
+Mon May 20 18:00:12 +0000 2024 - Executing "{python3 /openlane/scripts/new_tracks.py -i /root/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tracks.info -o /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/tmp/routing/config.tracks}"
+
+Mon May 20 18:00:13 +0000 2024 - Executing "{echo {OpenLane 77eb5ffc00966b47b36e332ccbf42103eb95e974} > /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/OPENLANE_VERSION}"
+
+Mon May 20 18:00:25 +0000 2024 - Executing "{sed -E {s/^([[:space:]]+)pg_pin(.*)/\1pin\2\n\1    direction : "inout";/g} /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib > /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/tmp/synthesis/1-sky130_fd_sc_hd__tt_025C_1v80.no_pg.lib}"
+
+Mon May 20 18:00:26 +0000 2024 - Executing "{sed -E {s/^([[:space:]]+)pg_pin(.*)/\1pin\2\n\1    direction : "inout";/g} /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/tmp/synthesis/trimmed.lib > /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/tmp/synthesis/1-trimmed.no_pg.lib}"
+
+Mon May 20 18:00:26 +0000 2024 - Executing "yosys -c /openlane/scripts/yosys/synth.tcl |& tee /dev/null /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/logs/synthesis/1-synthesis.log"
+
+Mon May 20 18:00:26 +0000 2024 - Executing "{yosys -c /openlane/scripts/yosys/synth.tcl |& tee /dev/null /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/logs/synthesis/1-synthesis.log}"
+
+Mon May 20 18:00:28 +0000 2024 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/mem_decode\/runs\/RUN_2024.05.20_18.00.08\/results\/synthesis\/mem_decode.v/} /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/config.tcl}"
+
+Mon May 20 18:00:28 +0000 2024 - Executing "{sed -i.bak /defparam/d /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/results/synthesis/mem_decode.v}"
+
+Mon May 20 18:00:29 +0000 2024 - Executing "sta -exit -no_init /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/logs/synthesis/2-sta.log"
+
+Mon May 20 18:00:29 +0000 2024 - Executing "{sta -exit -no_init /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/logs/synthesis/2-sta.log}"
+
+Mon May 20 18:00:29 +0000 2024 - Executing "{sed -E {s/^([[:space:]]+)pg_pin(.*)/\1pin\2\n\1    direction : "inout";/g} /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib > /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/tmp/synthesis/2-sky130_fd_sc_hd__tt_025C_1v80.no_pg.lib}"
+
+Mon May 20 18:00:29 +0000 2024 - Executing "{sed -E {s/^([[:space:]]+)pg_pin(.*)/\1pin\2\n\1    direction : "inout";/g} /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/tmp/synthesis/trimmed.lib > /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/tmp/synthesis/2-trimmed.no_pg.lib}"
+
+Mon May 20 18:00:29 +0000 2024 - Executing "yosys -c /openlane/scripts/yosys/synth.tcl |& tee /dev/null /dev/null"
+
+Mon May 20 18:00:29 +0000 2024 - Executing "{yosys -c /openlane/scripts/yosys/synth.tcl |& tee /dev/null /dev/null}"
+
+Mon May 20 18:00:31 +0000 2024 - Executing "{sed -i.bak /defparam/d /openlane/designs/mem_decode/runs/RUN_2024.05.20_18.00.08/tmp/synthesis/pg_define.v}"
+

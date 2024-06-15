@@ -1,0 +1,27 @@
+[WARNING GRT-0026] Missing route to pin wire6/A.
+[WARNING GRT-0026] Missing route to pin _06435_/B.
+[WARNING GRT-0026] Missing route to pin _06435_/C.
+[WARNING GRT-0026] Missing route to pin _06435_/Y.
+[WARNING GRT-0026] Missing route to pin wire4/A.
+[WARNING GRT-0026] Missing route to pin wire1/A.
+[WARNING GRT-0026] Missing route to pin _06520_/Y.
+[WARNING GRT-0026] Missing route to pin wire3/A.
+[WARNING GRT-0026] Missing route to pin _06951_/A2.
+[WARNING GRT-0026] Missing route to pin _06951_/B1.
+[WARNING GRT-0026] Missing route to pin _06951_/C1.
+[WARNING GRT-0026] Missing route to pin _06950_/X.
+[WARNING GRT-0026] Missing route to pin _07075_/B1.
+[WARNING GRT-0026] Missing route to pin _07075_/C1.
+[WARNING GRT-0026] Missing route to pin _07080_/D.
+[WARNING GRT-0026] Missing route to pin wire5/A.
+[WARNING GRT-0026] Missing route to pin _07450_/D.
+[WARNING GRT-0026] Missing route to pin wire2/A.
+[WARNING GRT-0026] Missing route to pin _07450_/Y.
+[WARNING GRT-0026] Missing route to pin _07575_/C.
+[WARNING GRT-0026] Missing route to pin _07601_/Y.
+[WARNING GRT-0026] Missing route to pin _06951_/B2.
+[WARNING GRT-0026] Missing route to pin _06951_/A1.
+[WARNING GRT-0026] Missing route to pin _06950_/B2.
+Warning: There are 78 unclocked register/latch pins.
+Warning: There are 119 unconstrained endpoints.
+[WARNING] Did not save OpenROAD database!

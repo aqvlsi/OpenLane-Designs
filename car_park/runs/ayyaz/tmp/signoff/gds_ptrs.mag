@@ -1,0 +1,6 @@
+<< properties >>
+string FIXED_BBOX 0 0 7600 11424
+string GDS_END 201086
+string GDS_FILE /openlane/designs/car_park/runs/ayyaz/results/signoff/car_park.magic.gds
+string GDS_START 70180
+<< end >>

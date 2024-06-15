@@ -1,0 +1,19 @@
+Design Name: car_park
+Run Directory: /openlane/designs/car_park/runs/ayyaz
+----------------------------------------
+
+Magic DRC Summary:
+Source: /openlane/designs/car_park/runs/ayyaz/reports/signoff/drc.rpt
+Total Magic DRC violations is 0
+----------------------------------------
+
+LVS Summary:
+Source: /openlane/designs/car_park/runs/ayyaz/logs/signoff/34-car_park.lef.lvs.log
+Number of nets: 54                         |Number of nets: 54                         
+Design is LVS clean.
+----------------------------------------
+
+Antenna Summary:
+Source: /openlane/designs/car_park/runs/ayyaz/logs/signoff/37-arc.log
+Pin violations: 0
+Net violations: 0

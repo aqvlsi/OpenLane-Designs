@@ -1,0 +1,272 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO car_park
+  CLASS BLOCK ;
+  FOREIGN car_park ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 38.000 BY 57.120 ;
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 11.355 10.640 12.955 46.480 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 18.025 10.640 19.625 46.480 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 24.695 10.640 26.295 46.480 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 31.365 10.640 32.965 46.480 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 17.800 32.965 19.400 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 26.640 32.965 28.240 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 35.480 32.965 37.080 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 44.320 32.965 45.920 ;
+    END
+  END VGND
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 8.055 10.640 9.655 46.480 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 14.725 10.640 16.325 46.480 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 21.395 10.640 22.995 46.480 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 28.065 10.640 29.665 46.480 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 14.500 32.440 16.100 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 23.340 32.440 24.940 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 32.180 32.440 33.780 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 41.020 32.440 42.620 ;
+    END
+  END VPWR
+  PIN clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.852000 ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 23.840 4.000 24.440 ;
+    END
+  END clk
+  PIN parking_spaces[0]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 37.440 4.000 38.040 ;
+    END
+  END parking_spaces[0]
+  PIN parking_spaces[1]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
+    PORT
+      LAYER met3 ;
+        RECT 34.000 34.040 38.000 34.640 ;
+    END
+  END parking_spaces[1]
+  PIN parking_spaces[2]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 27.240 4.000 27.840 ;
+    END
+  END parking_spaces[2]
+  PIN parking_spaces[3]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
+    PORT
+      LAYER met3 ;
+        RECT 34.000 20.440 38.000 21.040 ;
+    END
+  END parking_spaces[3]
+  PIN parking_spaces[4]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
+    PORT
+      LAYER met3 ;
+        RECT 34.000 13.640 38.000 14.240 ;
+    END
+  END parking_spaces[4]
+  PIN parking_spaces[5]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.795200 ;
+    PORT
+      LAYER met2 ;
+        RECT 22.630 53.120 22.910 57.120 ;
+    END
+  END parking_spaces[5]
+  PIN parking_spaces[6]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
+    PORT
+      LAYER met3 ;
+        RECT 34.000 27.240 38.000 27.840 ;
+    END
+  END parking_spaces[6]
+  PIN parking_spaces[7]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.445500 ;
+    PORT
+      LAYER met2 ;
+        RECT 16.190 0.000 16.470 4.000 ;
+    END
+  END parking_spaces[7]
+  PIN sensors[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 34.040 4.000 34.640 ;
+    END
+  END sensors[0]
+  PIN sensors[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
+    PORT
+      LAYER met3 ;
+        RECT 34.000 30.640 38.000 31.240 ;
+    END
+  END sensors[1]
+  PIN sensors[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 30.640 4.000 31.240 ;
+    END
+  END sensors[2]
+  PIN sensors[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
+    PORT
+      LAYER met3 ;
+        RECT 34.000 17.040 38.000 17.640 ;
+    END
+  END sensors[3]
+  PIN sensors[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
+    PORT
+      LAYER met2 ;
+        RECT 22.630 0.000 22.910 4.000 ;
+    END
+  END sensors[4]
+  PIN sensors[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
+    PORT
+      LAYER met2 ;
+        RECT 19.410 53.120 19.690 57.120 ;
+    END
+  END sensors[5]
+  PIN sensors[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
+    PORT
+      LAYER met3 ;
+        RECT 34.000 23.840 38.000 24.440 ;
+    END
+  END sensors[6]
+  PIN sensors[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.196500 ;
+    PORT
+      LAYER met2 ;
+        RECT 12.970 0.000 13.250 4.000 ;
+    END
+  END sensors[7]
+  OBS
+      LAYER li1 ;
+        RECT 5.520 10.795 32.200 46.325 ;
+      LAYER met1 ;
+        RECT 4.210 10.640 32.965 46.480 ;
+      LAYER met2 ;
+        RECT 4.230 52.840 19.130 53.120 ;
+        RECT 19.970 52.840 22.350 53.120 ;
+        RECT 23.190 52.840 32.935 53.120 ;
+        RECT 4.230 4.280 32.935 52.840 ;
+        RECT 4.230 4.000 12.690 4.280 ;
+        RECT 13.530 4.000 15.910 4.280 ;
+        RECT 16.750 4.000 22.350 4.280 ;
+        RECT 23.190 4.000 32.935 4.280 ;
+      LAYER met3 ;
+        RECT 3.990 38.440 34.690 46.405 ;
+        RECT 4.400 37.040 34.690 38.440 ;
+        RECT 3.990 35.040 34.690 37.040 ;
+        RECT 4.400 33.640 33.600 35.040 ;
+        RECT 3.990 31.640 34.690 33.640 ;
+        RECT 4.400 30.240 33.600 31.640 ;
+        RECT 3.990 28.240 34.690 30.240 ;
+        RECT 4.400 26.840 33.600 28.240 ;
+        RECT 3.990 24.840 34.690 26.840 ;
+        RECT 4.400 23.440 33.600 24.840 ;
+        RECT 3.990 21.440 34.690 23.440 ;
+        RECT 3.990 20.040 33.600 21.440 ;
+        RECT 3.990 18.040 34.690 20.040 ;
+        RECT 3.990 16.640 33.600 18.040 ;
+        RECT 3.990 14.640 34.690 16.640 ;
+        RECT 3.990 13.240 33.600 14.640 ;
+        RECT 3.990 10.715 34.690 13.240 ;
+      LAYER met4 ;
+        RECT 33.645 27.375 34.665 29.065 ;
+  END
+END car_park
+END LIBRARY
+

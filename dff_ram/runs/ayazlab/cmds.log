@@ -1,0 +1,104 @@
+Fri May 31 11:21:03 +0000 2024 - Executing "{openroad -exit -no_init -python /openlane/scripts/odbpy/lefutil.py get_metal_layers -o /openlane/designs/dff_ram/runs/ayazlab/tmp/layers.list /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef}"
+
+Fri May 31 11:21:03 +0000 2024 - Executing "{/openlane/scripts/mergeLef.py -o /openlane/designs/dff_ram/runs/ayazlab/tmp/merged.nom.lef -i /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef {/root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef} |& tee /dev/null}"
+
+Fri May 31 11:21:03 +0000 2024 - Executing "{/openlane/scripts/mergeLef.py -o /openlane/designs/dff_ram/runs/ayazlab/tmp/merged.min.lef -i /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__min.tlef {/root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef} |& tee /dev/null}"
+
+Fri May 31 11:21:03 +0000 2024 - Executing "{/openlane/scripts/mergeLef.py -o /openlane/designs/dff_ram/runs/ayazlab/tmp/merged.max.lef -i /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__max.tlef {/root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef} |& tee /dev/null}"
+
+Fri May 31 11:21:03 +0000 2024 - Executing "{python3 /openlane/scripts/mergeLib.py --output /openlane/designs/dff_ram/runs/ayazlab/tmp/synthesis/merged.lib --name sky130A_merged /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib}"
+
+Fri May 31 11:21:04 +0000 2024 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /openlane/designs/dff_ram/runs/ayazlab/tmp/synthesis/trimmed.lib.exclude.list --output /openlane/designs/dff_ram/runs/ayazlab/tmp/synthesis/trimmed.lib /openlane/designs/dff_ram/runs/ayazlab/tmp/synthesis/merged.lib}"
+
+Fri May 31 11:21:04 +0000 2024 - Executing "{python3 /openlane/scripts/new_tracks.py -i /root/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tracks.info -o /openlane/designs/dff_ram/runs/ayazlab/tmp/routing/config.tracks}"
+
+Fri May 31 11:21:04 +0000 2024 - Executing "{echo {OpenLane 77eb5ffc00966b47b36e332ccbf42103eb95e974} > /openlane/designs/dff_ram/runs/ayazlab/OPENLANE_VERSION}"
+
+Fri May 31 11:21:16 +0000 2024 - Executing "{sed -E {s/^([[:space:]]+)pg_pin(.*)/\1pin\2\n\1    direction : "inout";/g} /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib > /openlane/designs/dff_ram/runs/ayazlab/tmp/synthesis/26-sky130_fd_sc_hd__tt_025C_1v80.no_pg.lib}"
+
+Fri May 31 11:21:16 +0000 2024 - Executing "{sed -E {s/^([[:space:]]+)pg_pin(.*)/\1pin\2\n\1    direction : "inout";/g} /openlane/designs/dff_ram/runs/ayazlab/tmp/synthesis/trimmed.lib > /openlane/designs/dff_ram/runs/ayazlab/tmp/synthesis/26-trimmed.no_pg.lib}"
+
+Fri May 31 11:21:16 +0000 2024 - Executing "yosys -c /openlane/scripts/yosys/synth.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/synthesis/26-synthesis.log"
+
+Fri May 31 11:21:16 +0000 2024 - Executing "{yosys -c /openlane/scripts/yosys/synth.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/synthesis/26-synthesis.log}"
+
+Fri May 31 11:21:18 +0000 2024 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/dff_ram\/runs\/ayazlab\/results\/synthesis\/dff_ram_4x72.v/} /openlane/designs/dff_ram/runs/ayazlab/config.tcl}"
+
+Fri May 31 11:21:18 +0000 2024 - Executing "{sed -i.bak /defparam/d /openlane/designs/dff_ram/runs/ayazlab/results/synthesis/dff_ram_4x72.v}"
+
+Fri May 31 11:21:19 +0000 2024 - Executing "sta -exit -no_init /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/synthesis/27-sta.log"
+
+Fri May 31 11:21:19 +0000 2024 - Executing "{sta -exit -no_init /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/synthesis/27-sta.log}"
+
+Fri May 31 11:21:46 +0000 2024 - Executing "openroad -exit /openlane/scripts/openroad/floorplan.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/floorplan/28-initial_fp.log"
+
+Fri May 31 11:21:46 +0000 2024 - Executing "{openroad -exit /openlane/scripts/openroad/floorplan.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/floorplan/28-initial_fp.log}"
+
+Fri May 31 11:21:47 +0000 2024 - Executing "{openroad -exit -no_init -python /openlane/scripts/odbpy/defutil.py extract_core_dims --output-data /openlane/designs/dff_ram/runs/ayazlab/tmp/dimensions.txt --input-lef /openlane/designs/dff_ram/runs/ayazlab/tmp/merged.nom.lef /openlane/designs/dff_ram/runs/ayazlab/tmp/floorplan/28-initial_fp.def}"
+
+Fri May 31 11:21:48 +0000 2024 - Executing "openroad -exit /openlane/scripts/openroad/ioplacer.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/floorplan/29-io.log"
+
+Fri May 31 11:21:48 +0000 2024 - Executing "{openroad -exit /openlane/scripts/openroad/ioplacer.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/floorplan/29-io.log}"
+
+Fri May 31 11:21:48 +0000 2024 - Executing "openroad -exit /openlane/scripts/openroad/tapcell.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/floorplan/30-tap.log"
+
+Fri May 31 11:21:48 +0000 2024 - Executing "{openroad -exit /openlane/scripts/openroad/tapcell.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/floorplan/30-tap.log}"
+
+Fri May 31 11:21:49 +0000 2024 - Executing "openroad -exit /openlane/scripts/openroad/pdn.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/floorplan/31-pdn.log"
+
+Fri May 31 11:21:49 +0000 2024 - Executing "{openroad -exit /openlane/scripts/openroad/pdn.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/floorplan/31-pdn.log}"
+
+Fri May 31 11:21:57 +0000 2024 - Executing "openroad -exit /openlane/scripts/openroad/gpl.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/placement/31-global_skip_io.log"
+
+Fri May 31 11:21:57 +0000 2024 - Executing "{openroad -exit /openlane/scripts/openroad/gpl.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/placement/31-global_skip_io.log}"
+
+Fri May 31 11:21:58 +0000 2024 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/dff_ram\/runs\/ayazlab\/tmp\/placement\/32-global_skip_io.nl.v/} /openlane/designs/dff_ram/runs/ayazlab/config.tcl}"
+
+Fri May 31 11:21:58 +0000 2024 - Executing "openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/placement/33-gpl_sta.log"
+
+Fri May 31 11:21:59 +0000 2024 - Executing "{openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/placement/33-gpl_sta.log}"
+
+Fri May 31 11:22:00 +0000 2024 - Executing "openroad -exit /openlane/scripts/openroad/ioplacer.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/placement/34-io.log"
+
+Fri May 31 11:22:00 +0000 2024 - Executing "{openroad -exit /openlane/scripts/openroad/ioplacer.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/placement/34-io.log}"
+
+Fri May 31 11:22:01 +0000 2024 - Executing "openroad -exit /openlane/scripts/openroad/gpl.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/placement/34-global.log"
+
+Fri May 31 11:22:01 +0000 2024 - Executing "{openroad -exit /openlane/scripts/openroad/gpl.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/placement/34-global.log}"
+
+Fri May 31 11:22:02 +0000 2024 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/dff_ram\/runs\/ayazlab\/tmp\/placement\/35-global.nl.v/} /openlane/designs/dff_ram/runs/ayazlab/config.tcl}"
+
+Fri May 31 11:22:02 +0000 2024 - Executing "openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/placement/36-gpl_sta.log"
+
+Fri May 31 11:22:02 +0000 2024 - Executing "{openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/placement/36-gpl_sta.log}"
+
+Fri May 31 11:22:03 +0000 2024 - Executing "openroad -exit /openlane/scripts/openroad/resizer.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/placement/37-resizer.log"
+
+Fri May 31 11:22:03 +0000 2024 - Executing "{openroad -exit /openlane/scripts/openroad/resizer.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/placement/37-resizer.log}"
+
+Fri May 31 11:22:06 +0000 2024 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/dff_ram\/runs\/ayazlab\/tmp\/placement\/37-resizer.nl.v/} /openlane/designs/dff_ram/runs/ayazlab/config.tcl}"
+
+Fri May 31 11:22:07 +0000 2024 - Executing "openroad -exit /openlane/scripts/openroad/dpl.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/placement/38-detailed.log"
+
+Fri May 31 11:22:07 +0000 2024 - Executing "{openroad -exit /openlane/scripts/openroad/dpl.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/placement/38-detailed.log}"
+
+Fri May 31 11:22:07 +0000 2024 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/dff_ram\/runs\/ayazlab\/results\/placement\/dff_ram_4x72.nl.v/} /openlane/designs/dff_ram/runs/ayazlab/config.tcl}"
+
+Fri May 31 11:22:07 +0000 2024 - Executing "openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/placement/39-dpl_sta.log"
+
+Fri May 31 11:22:08 +0000 2024 - Executing "{openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/placement/39-dpl_sta.log}"
+
+Fri May 31 11:22:11 +0000 2024 - Executing "openroad -exit /openlane/scripts/openroad/resizer_routing_design.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/routing/40-resizer_design.log"
+
+Fri May 31 11:22:11 +0000 2024 - Executing "{openroad -exit /openlane/scripts/openroad/resizer_routing_design.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/routing/40-resizer_design.log}"
+
+Fri May 31 11:22:14 +0000 2024 - Executing "{sed -i.bak -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/dff_ram\/runs\/ayazlab\/tmp\/40-dff_ram_4x72.nl.v/} /openlane/designs/dff_ram/runs/ayazlab/config.tcl}"
+
+Fri May 31 11:22:14 +0000 2024 - Executing "openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/routing/41-rsz_design_sta.log"
+
+Fri May 31 11:22:14 +0000 2024 - Executing "{openroad -exit /openlane/scripts/openroad/sta/multi_corner.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/routing/41-rsz_design_sta.log}"
+
+Fri May 31 11:22:16 +0000 2024 - Executing "openroad -exit /openlane/scripts/openroad/resizer_routing_timing.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/routing/42-resizer_timing.log"
+
+Fri May 31 11:22:16 +0000 2024 - Executing "{openroad -exit /openlane/scripts/openroad/resizer_routing_timing.tcl |& tee /dev/null /openlane/designs/dff_ram/runs/ayazlab/logs/routing/42-resizer_timing.log}"
+

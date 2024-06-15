@@ -1,0 +1,51 @@
+- status: 25 - openlane design prep
+  runtime_s: 1.94
+  runtime_ts: 0h0m1s938ms
+- status: 26 - synthesis - yosys
+  runtime_s: 2.6
+  runtime_ts: 0h0m2s596ms
+- status: 27 - sta - openroad
+  runtime_s: 0.89
+  runtime_ts: 0h0m0s892ms
+- status: 28 - floorplan initialization - openroad
+  runtime_s: 0.93
+  runtime_ts: 0h0m0s932ms
+- status: 29 - ioplace - openroad
+  runtime_s: 0.77
+  runtime_ts: 0h0m0s772ms
+- status: 30 - tap/decap insertion - openroad
+  runtime_s: 0.79
+  runtime_ts: 0h0m0s786ms
+- status: 31 - pdn generation - openroad
+  runtime_s: 0.84
+  runtime_ts: 0h0m0s838ms
+- status: 32 - global placement - openroad
+  runtime_s: 1.08
+  runtime_ts: 0h0m1s82ms
+- status: 33 - sta - openroad
+  runtime_s: 1.26
+  runtime_ts: 0h0m1s262ms
+- status: 34 - ioplace - openroad
+  runtime_s: 0.76
+  runtime_ts: 0h0m0s759ms
+- status: 35 - global placement - openroad
+  runtime_s: 1.11
+  runtime_ts: 0h0m1s110ms
+- status: 36 - sta - openroad
+  runtime_s: 1.19
+  runtime_ts: 0h0m1s189ms
+- status: 37 - resizer design optimizations - openroad
+  runtime_s: 3.25
+  runtime_ts: 0h0m3s248ms
+- status: 38 - detailed placement - openroad
+  runtime_s: 0.82
+  runtime_ts: 0h0m0s822ms
+- status: 39 - sta - openroad
+  runtime_s: 1.25
+  runtime_ts: 0h0m1s250ms
+- status: 40 - resizer design optimizations - openroad
+  runtime_s: 3.11
+  runtime_ts: 0h0m3s107ms
+- status: 41 - sta - openroad
+  runtime_s: 1.6
+  runtime_ts: 0h0m1s597ms

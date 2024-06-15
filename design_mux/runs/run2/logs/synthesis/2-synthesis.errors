@@ -1,0 +1,1 @@
+/openlane/designs/design_mux/src/spi_slave.v:53: ERROR: Re-definition of module `$abstract\spi_slave'!

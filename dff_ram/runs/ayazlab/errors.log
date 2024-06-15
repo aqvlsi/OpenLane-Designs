@@ -1,0 +1,15 @@
+[ERROR]: during executing openroad script /openlane/scripts/openroad/resizer_routing_timing.tcl
+[ERROR]: Log: designs/dff_ram/runs/ayazlab/logs/routing/42-resizer_timing.log
+[ERROR]: Last 10 lines:
+
+[INFO GRT-0018] Total wirelength: 53778 um
+[INFO GRT-0014] Routed nets: 1479
+[INFO]: Setting RC values...
+[INFO RSZ-0046] Found 360 endpoints with hold violations.
+[WARNING RSZ-0064] Unable to repair all hold checks within margin.
+[INFO RSZ-0032] Inserted 985 hold buffers.
+[ERROR RSZ-0060] Max buffer count reached.
+Error: resizer_routing_timing.tcl, 67 RSZ-0060
+child process exited abnormally
+
+[ERROR]: Creating issue reproducible...

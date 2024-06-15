@@ -1,0 +1,1405 @@
+OpenSTA 2.5.0 GITDIR-NOT Copyright (c) 2024, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+define_corners Typical
+read_liberty -corner Typical /root/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Using 1e-12 for capacitance...
+Using 1e+03 for resistance...
+Using 1e-09 for time...
+Using 1e+00 for voltage...
+Using 1e-03 for current...
+Using 1e-09 for power...
+Using 1e-06 for distance...
+Reading netlist '/openlane/designs/mem_decode/runs/decoder/results/synthesis/mem_decode.v'…
+Reading design constraints file at '/openlane/designs/mem_decode/src/mem_decode.sdc'…
+min_report
+
+===========================================================================
+report_checks -path_delay min (Hold)
+============================================================================
+======================= Typical Corner ===================================
+
+Startpoint: _575_ (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: _575_ (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.00    0.00    0.00 ^ _575_/CLK (sky130_fd_sc_hd__dfxtp_2)
+     2    0.00    0.04    0.29    0.29 ^ _575_/Q (sky130_fd_sc_hd__dfxtp_2)
+                                         ram_ready (net)
+                  0.04    0.00    0.29 ^ _285_/A (sky130_fd_sc_hd__buf_1)
+    10    0.02    0.29    0.25    0.54 ^ _285_/X (sky130_fd_sc_hd__buf_1)
+                                         _020_ (net)
+                  0.29    0.00    0.54 ^ _286_/A (sky130_fd_sc_hd__buf_1)
+    10    0.02    0.29    0.29    0.84 ^ _286_/X (sky130_fd_sc_hd__buf_1)
+                                         _021_ (net)
+                  0.29    0.00    0.84 ^ _287_/A (sky130_fd_sc_hd__buf_1)
+    10    0.02    0.26    0.28    1.11 ^ _287_/X (sky130_fd_sc_hd__buf_1)
+                                         _022_ (net)
+                  0.26    0.00    1.11 ^ _292_/A (sky130_fd_sc_hd__nor4b_2)
+     2    0.01    0.05    0.10    1.21 v _292_/Y (sky130_fd_sc_hd__nor4b_2)
+                                         _027_ (net)
+                  0.05    0.00    1.21 v _301_/C1 (sky130_fd_sc_hd__o2111a_2)
+     2    0.00    0.02    0.13    1.35 v _301_/X (sky130_fd_sc_hd__o2111a_2)
+                                         extra_picosoc_mem_wen[0] (net)
+                  0.02    0.00    1.35 v _575_/D (sky130_fd_sc_hd__dfxtp_2)
+                                  1.35   data arrival time
+
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.00    0.00   clock reconvergence pessimism
+                                  0.00 ^ _575_/CLK (sky130_fd_sc_hd__dfxtp_2)
+                         -0.05   -0.05   library hold time
+                                 -0.05   data required time
+-----------------------------------------------------------------------------
+                                 -0.05   data required time
+                                 -1.35   data arrival time
+-----------------------------------------------------------------------------
+                                  1.39   slack (MET)
+
+
+
+worst slack corner Typical: 1.3947
+min_report_end
+max_report
+
+===========================================================================
+report_checks -path_delay max (Setup)
+============================================================================
+======================= Typical Corner ===================================
+
+Startpoint: _575_ (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: _575_ (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.00    0.00    0.00 ^ _575_/CLK (sky130_fd_sc_hd__dfxtp_2)
+     2    0.00    0.03    0.29    0.29 v _575_/Q (sky130_fd_sc_hd__dfxtp_2)
+                                         ram_ready (net)
+                  0.03    0.00    0.29 v _285_/A (sky130_fd_sc_hd__buf_1)
+    10    0.02    0.13    0.16    0.45 v _285_/X (sky130_fd_sc_hd__buf_1)
+                                         _020_ (net)
+                  0.13    0.00    0.45 v _286_/A (sky130_fd_sc_hd__buf_1)
+    10    0.02    0.13    0.20    0.65 v _286_/X (sky130_fd_sc_hd__buf_1)
+                                         _021_ (net)
+                  0.13    0.00    0.65 v _287_/A (sky130_fd_sc_hd__buf_1)
+    10    0.02    0.12    0.20    0.85 v _287_/X (sky130_fd_sc_hd__buf_1)
+                                         _022_ (net)
+                  0.12    0.00    0.85 v _292_/A (sky130_fd_sc_hd__nor4b_2)
+     2    0.01    0.27    0.35    1.20 ^ _292_/Y (sky130_fd_sc_hd__nor4b_2)
+                                         _027_ (net)
+                  0.27    0.00    1.20 ^ _301_/C1 (sky130_fd_sc_hd__o2111a_2)
+     2    0.00    0.04    0.23    1.43 ^ _301_/X (sky130_fd_sc_hd__o2111a_2)
+                                         extra_picosoc_mem_wen[0] (net)
+                  0.04    0.00    1.43 ^ _575_/D (sky130_fd_sc_hd__dfxtp_2)
+                                  1.43   data arrival time
+
+                  0.00  100.00  100.00   clock core_clock (rise edge)
+                          0.00  100.00   clock network delay (ideal)
+                          0.00  100.00   clock reconvergence pessimism
+                                100.00 ^ _575_/CLK (sky130_fd_sc_hd__dfxtp_2)
+                         -0.06   99.94   library setup time
+                                 99.94   data required time
+-----------------------------------------------------------------------------
+                                 99.94   data required time
+                                 -1.43   data arrival time
+-----------------------------------------------------------------------------
+                                 98.51   slack (MET)
+
+
+
+worst slack corner Typical: 98.5056
+max_report_end
+checks_report
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= Typical Corner ===================================
+
+Startpoint: _575_ (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: _575_ (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.00    0.00    0.00 ^ _575_/CLK (sky130_fd_sc_hd__dfxtp_2)
+     2    0.00    0.03    0.29    0.29 v _575_/Q (sky130_fd_sc_hd__dfxtp_2)
+                                         ram_ready (net)
+                  0.03    0.00    0.29 v _285_/A (sky130_fd_sc_hd__buf_1)
+    10    0.02    0.13    0.16    0.45 v _285_/X (sky130_fd_sc_hd__buf_1)
+                                         _020_ (net)
+                  0.13    0.00    0.45 v _286_/A (sky130_fd_sc_hd__buf_1)
+    10    0.02    0.13    0.20    0.65 v _286_/X (sky130_fd_sc_hd__buf_1)
+                                         _021_ (net)
+                  0.13    0.00    0.65 v _287_/A (sky130_fd_sc_hd__buf_1)
+    10    0.02    0.12    0.20    0.85 v _287_/X (sky130_fd_sc_hd__buf_1)
+                                         _022_ (net)
+                  0.12    0.00    0.85 v _292_/A (sky130_fd_sc_hd__nor4b_2)
+     2    0.01    0.27    0.35    1.20 ^ _292_/Y (sky130_fd_sc_hd__nor4b_2)
+                                         _027_ (net)
+                  0.27    0.00    1.20 ^ _301_/C1 (sky130_fd_sc_hd__o2111a_2)
+     2    0.00    0.04    0.23    1.43 ^ _301_/X (sky130_fd_sc_hd__o2111a_2)
+                                         extra_picosoc_mem_wen[0] (net)
+                  0.04    0.00    1.43 ^ _575_/D (sky130_fd_sc_hd__dfxtp_2)
+                                  1.43   data arrival time
+
+                  0.00  100.00  100.00   clock core_clock (rise edge)
+                          0.00  100.00   clock network delay (ideal)
+                          0.00  100.00   clock reconvergence pessimism
+                                100.00 ^ _575_/CLK (sky130_fd_sc_hd__dfxtp_2)
+                         -0.06   99.94   library setup time
+                                 99.94   data required time
+-----------------------------------------------------------------------------
+                                 99.94   data required time
+                                 -1.43   data arrival time
+-----------------------------------------------------------------------------
+                                 98.51   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= Typical Corner ===================================
+
+
+max slew violations count Typical: 0
+max fanout violations count Typical: 0
+max cap violations count Typical: 0
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 717 unannotated drivers.
+ clk
+ extra_irq_5
+ extra_irq_6
+ extra_irq_7
+ iomem_rdata[0]
+ iomem_rdata[10]
+ iomem_rdata[11]
+ iomem_rdata[12]
+ iomem_rdata[13]
+ iomem_rdata[14]
+ iomem_rdata[15]
+ iomem_rdata[16]
+ iomem_rdata[17]
+ iomem_rdata[18]
+ iomem_rdata[19]
+ iomem_rdata[1]
+ iomem_rdata[20]
+ iomem_rdata[21]
+ iomem_rdata[22]
+ iomem_rdata[23]
+ iomem_rdata[24]
+ iomem_rdata[25]
+ iomem_rdata[26]
+ iomem_rdata[27]
+ iomem_rdata[28]
+ iomem_rdata[29]
+ iomem_rdata[2]
+ iomem_rdata[30]
+ iomem_rdata[31]
+ iomem_rdata[3]
+ iomem_rdata[4]
+ iomem_rdata[5]
+ iomem_rdata[6]
+ iomem_rdata[7]
+ iomem_rdata[8]
+ iomem_rdata[9]
+ iomem_ready
+ mem_addr[0]
+ mem_addr[10]
+ mem_addr[11]
+ mem_addr[12]
+ mem_addr[13]
+ mem_addr[14]
+ mem_addr[15]
+ mem_addr[16]
+ mem_addr[17]
+ mem_addr[18]
+ mem_addr[19]
+ mem_addr[1]
+ mem_addr[20]
+ mem_addr[21]
+ mem_addr[22]
+ mem_addr[23]
+ mem_addr[24]
+ mem_addr[25]
+ mem_addr[26]
+ mem_addr[27]
+ mem_addr[28]
+ mem_addr[29]
+ mem_addr[2]
+ mem_addr[30]
+ mem_addr[31]
+ mem_addr[3]
+ mem_addr[4]
+ mem_addr[5]
+ mem_addr[6]
+ mem_addr[7]
+ mem_addr[8]
+ mem_addr[9]
+ mem_instr
+ mem_valid
+ mem_wdata[0]
+ mem_wdata[10]
+ mem_wdata[11]
+ mem_wdata[12]
+ mem_wdata[13]
+ mem_wdata[14]
+ mem_wdata[15]
+ mem_wdata[16]
+ mem_wdata[17]
+ mem_wdata[18]
+ mem_wdata[19]
+ mem_wdata[1]
+ mem_wdata[20]
+ mem_wdata[21]
+ mem_wdata[22]
+ mem_wdata[23]
+ mem_wdata[24]
+ mem_wdata[25]
+ mem_wdata[26]
+ mem_wdata[27]
+ mem_wdata[28]
+ mem_wdata[29]
+ mem_wdata[2]
+ mem_wdata[30]
+ mem_wdata[31]
+ mem_wdata[3]
+ mem_wdata[4]
+ mem_wdata[5]
+ mem_wdata[6]
+ mem_wdata[7]
+ mem_wdata[8]
+ mem_wdata[9]
+ mem_wstrb[0]
+ mem_wstrb[1]
+ mem_wstrb[2]
+ mem_wstrb[3]
+ ram_rdata[0]
+ ram_rdata[10]
+ ram_rdata[11]
+ ram_rdata[12]
+ ram_rdata[13]
+ ram_rdata[14]
+ ram_rdata[15]
+ ram_rdata[16]
+ ram_rdata[17]
+ ram_rdata[18]
+ ram_rdata[19]
+ ram_rdata[1]
+ ram_rdata[20]
+ ram_rdata[21]
+ ram_rdata[22]
+ ram_rdata[23]
+ ram_rdata[24]
+ ram_rdata[25]
+ ram_rdata[26]
+ ram_rdata[27]
+ ram_rdata[28]
+ ram_rdata[29]
+ ram_rdata[2]
+ ram_rdata[30]
+ ram_rdata[31]
+ ram_rdata[3]
+ ram_rdata[4]
+ ram_rdata[5]
+ ram_rdata[6]
+ ram_rdata[7]
+ ram_rdata[8]
+ ram_rdata[9]
+ simpleuart_reg_dat_do[0]
+ simpleuart_reg_dat_do[10]
+ simpleuart_reg_dat_do[11]
+ simpleuart_reg_dat_do[12]
+ simpleuart_reg_dat_do[13]
+ simpleuart_reg_dat_do[14]
+ simpleuart_reg_dat_do[15]
+ simpleuart_reg_dat_do[16]
+ simpleuart_reg_dat_do[17]
+ simpleuart_reg_dat_do[18]
+ simpleuart_reg_dat_do[19]
+ simpleuart_reg_dat_do[1]
+ simpleuart_reg_dat_do[20]
+ simpleuart_reg_dat_do[21]
+ simpleuart_reg_dat_do[22]
+ simpleuart_reg_dat_do[23]
+ simpleuart_reg_dat_do[24]
+ simpleuart_reg_dat_do[25]
+ simpleuart_reg_dat_do[26]
+ simpleuart_reg_dat_do[27]
+ simpleuart_reg_dat_do[28]
+ simpleuart_reg_dat_do[29]
+ simpleuart_reg_dat_do[2]
+ simpleuart_reg_dat_do[30]
+ simpleuart_reg_dat_do[31]
+ simpleuart_reg_dat_do[3]
+ simpleuart_reg_dat_do[4]
+ simpleuart_reg_dat_do[5]
+ simpleuart_reg_dat_do[6]
+ simpleuart_reg_dat_do[7]
+ simpleuart_reg_dat_do[8]
+ simpleuart_reg_dat_do[9]
+ simpleuart_reg_dat_wait
+ simpleuart_reg_div_do[0]
+ simpleuart_reg_div_do[10]
+ simpleuart_reg_div_do[11]
+ simpleuart_reg_div_do[12]
+ simpleuart_reg_div_do[13]
+ simpleuart_reg_div_do[14]
+ simpleuart_reg_div_do[15]
+ simpleuart_reg_div_do[16]
+ simpleuart_reg_div_do[17]
+ simpleuart_reg_div_do[18]
+ simpleuart_reg_div_do[19]
+ simpleuart_reg_div_do[1]
+ simpleuart_reg_div_do[20]
+ simpleuart_reg_div_do[21]
+ simpleuart_reg_div_do[22]
+ simpleuart_reg_div_do[23]
+ simpleuart_reg_div_do[24]
+ simpleuart_reg_div_do[25]
+ simpleuart_reg_div_do[26]
+ simpleuart_reg_div_do[27]
+ simpleuart_reg_div_do[28]
+ simpleuart_reg_div_do[29]
+ simpleuart_reg_div_do[2]
+ simpleuart_reg_div_do[30]
+ simpleuart_reg_div_do[31]
+ simpleuart_reg_div_do[3]
+ simpleuart_reg_div_do[4]
+ simpleuart_reg_div_do[5]
+ simpleuart_reg_div_do[6]
+ simpleuart_reg_div_do[7]
+ simpleuart_reg_div_do[8]
+ simpleuart_reg_div_do[9]
+ spimem_rdata[0]
+ spimem_rdata[10]
+ spimem_rdata[11]
+ spimem_rdata[12]
+ spimem_rdata[13]
+ spimem_rdata[14]
+ spimem_rdata[15]
+ spimem_rdata[16]
+ spimem_rdata[17]
+ spimem_rdata[18]
+ spimem_rdata[19]
+ spimem_rdata[1]
+ spimem_rdata[20]
+ spimem_rdata[21]
+ spimem_rdata[22]
+ spimem_rdata[23]
+ spimem_rdata[24]
+ spimem_rdata[25]
+ spimem_rdata[26]
+ spimem_rdata[27]
+ spimem_rdata[28]
+ spimem_rdata[29]
+ spimem_rdata[2]
+ spimem_rdata[30]
+ spimem_rdata[31]
+ spimem_rdata[3]
+ spimem_rdata[4]
+ spimem_rdata[5]
+ spimem_rdata[6]
+ spimem_rdata[7]
+ spimem_rdata[8]
+ spimem_rdata[9]
+ spimem_ready
+ spimemio_cfgreg_do[0]
+ spimemio_cfgreg_do[10]
+ spimemio_cfgreg_do[11]
+ spimemio_cfgreg_do[12]
+ spimemio_cfgreg_do[13]
+ spimemio_cfgreg_do[14]
+ spimemio_cfgreg_do[15]
+ spimemio_cfgreg_do[16]
+ spimemio_cfgreg_do[17]
+ spimemio_cfgreg_do[18]
+ spimemio_cfgreg_do[19]
+ spimemio_cfgreg_do[1]
+ spimemio_cfgreg_do[20]
+ spimemio_cfgreg_do[21]
+ spimemio_cfgreg_do[22]
+ spimemio_cfgreg_do[23]
+ spimemio_cfgreg_do[24]
+ spimemio_cfgreg_do[25]
+ spimemio_cfgreg_do[26]
+ spimemio_cfgreg_do[27]
+ spimemio_cfgreg_do[28]
+ spimemio_cfgreg_do[29]
+ spimemio_cfgreg_do[2]
+ spimemio_cfgreg_do[30]
+ spimemio_cfgreg_do[31]
+ spimemio_cfgreg_do[3]
+ spimemio_cfgreg_do[4]
+ spimemio_cfgreg_do[5]
+ spimemio_cfgreg_do[6]
+ spimemio_cfgreg_do[7]
+ spimemio_cfgreg_do[8]
+ spimemio_cfgreg_do[9]
+ _263_/X
+ _264_/X
+ _265_/X
+ _266_/X
+ _267_/Y
+ _268_/X
+ _269_/X
+ _270_/X
+ _271_/X
+ _272_/Y
+ _273_/X
+ _274_/X
+ _275_/X
+ _276_/X
+ _277_/X
+ _278_/X
+ _279_/X
+ _280_/X
+ _281_/X
+ _282_/X
+ _283_/X
+ _284_/Y
+ _285_/X
+ _286_/X
+ _287_/X
+ _288_/X
+ _289_/X
+ _290_/X
+ _291_/Y
+ _292_/Y
+ _293_/Y
+ _294_/X
+ _295_/X
+ _296_/Y
+ _297_/Y
+ _298_/X
+ _299_/X
+ _300_/Y
+ _301_/X
+ _302_/X
+ _303_/X
+ _304_/X
+ _305_/X
+ _306_/X
+ _307_/X
+ _308_/X
+ _309_/X
+ _310_/X
+ _311_/X
+ _312_/X
+ _313_/X
+ _314_/X
+ _315_/X
+ _316_/X
+ _317_/X
+ _318_/X
+ _319_/X
+ _320_/X
+ _321_/X
+ _322_/X
+ _323_/X
+ _324_/X
+ _325_/X
+ _326_/X
+ _327_/X
+ _328_/X
+ _329_/X
+ _330_/X
+ _331_/X
+ _332_/X
+ _333_/Y
+ _334_/X
+ _335_/X
+ _336_/X
+ _337_/X
+ _338_/X
+ _339_/X
+ _340_/X
+ _341_/X
+ _342_/X
+ _343_/X
+ _344_/X
+ _345_/X
+ _346_/X
+ _347_/X
+ _348_/X
+ _349_/X
+ _350_/X
+ _351_/X
+ _352_/X
+ _353_/X
+ _354_/X
+ _355_/X
+ _356_/X
+ _357_/X
+ _358_/X
+ _359_/X
+ _360_/X
+ _361_/X
+ _362_/X
+ _363_/X
+ _364_/X
+ _365_/X
+ _366_/X
+ _367_/X
+ _368_/X
+ _369_/X
+ _370_/X
+ _371_/X
+ _372_/X
+ _373_/Y
+ _374_/Y
+ _375_/X
+ _376_/Y
+ _377_/Y
+ _378_/X
+ _379_/X
+ _380_/X
+ _381_/X
+ _382_/X
+ _383_/X
+ _384_/X
+ _385_/X
+ _386_/X
+ _387_/X
+ _388_/X
+ _389_/X
+ _390_/X
+ _391_/X
+ _392_/X
+ _393_/X
+ _394_/X
+ _395_/X
+ _396_/X
+ _397_/X
+ _398_/X
+ _399_/X
+ _400_/X
+ _401_/X
+ _402_/X
+ _403_/X
+ _404_/X
+ _405_/X
+ _406_/X
+ _407_/X
+ _408_/X
+ _409_/X
+ _410_/X
+ _411_/X
+ _412_/Y
+ _413_/Y
+ _414_/X
+ _415_/Y
+ _416_/Y
+ _417_/X
+ _418_/X
+ _419_/Y
+ _420_/Y
+ _421_/X
+ _422_/Y
+ _423_/Y
+ _424_/X
+ _425_/X
+ _426_/X
+ _427_/X
+ _428_/X
+ _429_/X
+ _430_/X
+ _431_/X
+ _432_/X
+ _433_/X
+ _434_/X
+ _435_/X
+ _436_/X
+ _437_/X
+ _438_/X
+ _439_/X
+ _440_/X
+ _441_/X
+ _442_/X
+ _443_/X
+ _444_/X
+ _445_/X
+ _446_/X
+ _447_/X
+ _448_/X
+ _449_/X
+ _450_/X
+ _451_/X
+ _452_/X
+ _453_/X
+ _454_/X
+ _455_/X
+ _456_/X
+ _457_/X
+ _458_/X
+ _459_/X
+ _460_/X
+ _461_/X
+ _462_/X
+ _463_/X
+ _464_/X
+ _465_/X
+ _466_/X
+ _467_/X
+ _468_/X
+ _469_/X
+ _470_/X
+ _471_/X
+ _472_/X
+ _473_/X
+ _474_/X
+ _475_/X
+ _476_/X
+ _477_/X
+ _478_/X
+ _479_/X
+ _480_/X
+ _481_/X
+ _482_/Y
+ _483_/Y
+ _484_/X
+ _485_/Y
+ _486_/Y
+ _487_/X
+ _488_/X
+ _489_/X
+ _490_/X
+ _491_/X
+ _492_/X
+ _493_/X
+ _494_/X
+ _495_/X
+ _496_/Y
+ _497_/Y
+ _498_/X
+ _499_/Y
+ _500_/Y
+ _501_/X
+ _502_/X
+ _503_/X
+ _504_/X
+ _505_/X
+ _506_/X
+ _507_/X
+ _508_/X
+ _509_/X
+ _510_/X
+ _511_/X
+ _512_/X
+ _513_/X
+ _514_/X
+ _515_/X
+ _516_/X
+ _517_/X
+ _518_/X
+ _519_/X
+ _520_/X
+ _521_/X
+ _522_/X
+ _523_/X
+ _524_/X
+ _525_/X
+ _526_/X
+ _527_/X
+ _528_/X
+ _529_/X
+ _530_/X
+ _531_/Y
+ _532_/Y
+ _533_/X
+ _534_/Y
+ _535_/Y
+ _536_/X
+ _537_/X
+ _538_/X
+ _539_/X
+ _540_/X
+ _541_/X
+ _542_/X
+ _543_/X
+ _544_/X
+ _545_/X
+ _546_/X
+ _547_/X
+ _548_/X
+ _549_/X
+ _550_/X
+ _551_/X
+ _552_/X
+ _553_/X
+ _554_/X
+ _555_/X
+ _556_/X
+ _557_/X
+ _558_/X
+ _559_/X
+ _560_/X
+ _561_/X
+ _562_/X
+ _563_/X
+ _564_/X
+ _565_/X
+ _566_/Y
+ _567_/Y
+ _568_/X
+ _569_/Y
+ _570_/Y
+ _571_/X
+ _572_/X
+ _573_/X
+ _574_/X
+ _575_/Q
+ _576_/HI
+ _576_/LO
+ _577_/HI
+ _577_/LO
+ _578_/HI
+ _578_/LO
+ _579_/HI
+ _579_/LO
+ _580_/HI
+ _580_/LO
+ _581_/HI
+ _581_/LO
+ _582_/HI
+ _582_/LO
+ _583_/HI
+ _583_/LO
+ _584_/HI
+ _584_/LO
+ _585_/HI
+ _585_/LO
+ _586_/HI
+ _586_/LO
+ _587_/HI
+ _587_/LO
+ _588_/HI
+ _588_/LO
+ _589_/HI
+ _589_/LO
+ _590_/HI
+ _590_/LO
+ _591_/HI
+ _591_/LO
+ _592_/HI
+ _592_/LO
+ _593_/HI
+ _593_/LO
+ _594_/HI
+ _594_/LO
+ _595_/HI
+ _595_/LO
+ _596_/HI
+ _596_/LO
+ _597_/HI
+ _597_/LO
+ _598_/HI
+ _598_/LO
+ _599_/HI
+ _599_/LO
+ _600_/HI
+ _600_/LO
+ _601_/HI
+ _601_/LO
+ _602_/HI
+ _602_/LO
+ _603_/HI
+ _603_/LO
+ _604_/HI
+ _604_/LO
+ _605_/HI
+ _605_/LO
+ _606_/HI
+ _606_/LO
+ _607_/HI
+ _607_/LO
+ _608_/X
+ _609_/X
+ _610_/X
+ _611_/X
+ _612_/X
+ _613_/X
+ _614_/X
+ _615_/X
+ _616_/X
+ _617_/X
+ _618_/X
+ _619_/X
+ _620_/X
+ _621_/X
+ _622_/X
+ _623_/X
+ _624_/X
+ _625_/X
+ _626_/X
+ _627_/X
+ _628_/X
+ _629_/X
+ _630_/X
+ _631_/X
+ _632_/X
+ _633_/X
+ _634_/X
+ _635_/X
+ _636_/X
+ _637_/X
+ _638_/X
+ _639_/X
+ _640_/X
+ _641_/X
+ _642_/X
+ _643_/X
+ _644_/X
+ _645_/X
+ _646_/X
+ _647_/X
+ _648_/X
+ _649_/X
+ _650_/X
+ _651_/X
+ _652_/X
+ _653_/X
+ _654_/X
+ _655_/X
+ _656_/X
+ _657_/X
+ _658_/X
+ _659_/X
+ _660_/X
+ _661_/X
+ _662_/X
+ _663_/X
+ _664_/X
+ _665_/X
+ _666_/X
+ _667_/X
+ _668_/X
+ _669_/X
+ _670_/X
+ _671_/X
+ _672_/X
+ _673_/X
+ _674_/X
+ _675_/X
+ _676_/X
+ _677_/X
+ _678_/X
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 268 input ports missing set_input_delay.
+  extra_irq_5
+  extra_irq_6
+  extra_irq_7
+  iomem_rdata[0]
+  iomem_rdata[10]
+  iomem_rdata[11]
+  iomem_rdata[12]
+  iomem_rdata[13]
+  iomem_rdata[14]
+  iomem_rdata[15]
+  iomem_rdata[16]
+  iomem_rdata[17]
+  iomem_rdata[18]
+  iomem_rdata[19]
+  iomem_rdata[1]
+  iomem_rdata[20]
+  iomem_rdata[21]
+  iomem_rdata[22]
+  iomem_rdata[23]
+  iomem_rdata[24]
+  iomem_rdata[25]
+  iomem_rdata[26]
+  iomem_rdata[27]
+  iomem_rdata[28]
+  iomem_rdata[29]
+  iomem_rdata[2]
+  iomem_rdata[30]
+  iomem_rdata[31]
+  iomem_rdata[3]
+  iomem_rdata[4]
+  iomem_rdata[5]
+  iomem_rdata[6]
+  iomem_rdata[7]
+  iomem_rdata[8]
+  iomem_rdata[9]
+  iomem_ready
+  mem_addr[0]
+  mem_addr[10]
+  mem_addr[11]
+  mem_addr[12]
+  mem_addr[13]
+  mem_addr[14]
+  mem_addr[15]
+  mem_addr[16]
+  mem_addr[17]
+  mem_addr[18]
+  mem_addr[19]
+  mem_addr[1]
+  mem_addr[20]
+  mem_addr[21]
+  mem_addr[22]
+  mem_addr[23]
+  mem_addr[24]
+  mem_addr[25]
+  mem_addr[26]
+  mem_addr[27]
+  mem_addr[28]
+  mem_addr[29]
+  mem_addr[2]
+  mem_addr[30]
+  mem_addr[31]
+  mem_addr[3]
+  mem_addr[4]
+  mem_addr[5]
+  mem_addr[6]
+  mem_addr[7]
+  mem_addr[8]
+  mem_addr[9]
+  mem_instr
+  mem_valid
+  mem_wdata[0]
+  mem_wdata[10]
+  mem_wdata[11]
+  mem_wdata[12]
+  mem_wdata[13]
+  mem_wdata[14]
+  mem_wdata[15]
+  mem_wdata[16]
+  mem_wdata[17]
+  mem_wdata[18]
+  mem_wdata[19]
+  mem_wdata[1]
+  mem_wdata[20]
+  mem_wdata[21]
+  mem_wdata[22]
+  mem_wdata[23]
+  mem_wdata[24]
+  mem_wdata[25]
+  mem_wdata[26]
+  mem_wdata[27]
+  mem_wdata[28]
+  mem_wdata[29]
+  mem_wdata[2]
+  mem_wdata[30]
+  mem_wdata[31]
+  mem_wdata[3]
+  mem_wdata[4]
+  mem_wdata[5]
+  mem_wdata[6]
+  mem_wdata[7]
+  mem_wdata[8]
+  mem_wdata[9]
+  mem_wstrb[0]
+  mem_wstrb[1]
+  mem_wstrb[2]
+  mem_wstrb[3]
+  ram_rdata[0]
+  ram_rdata[10]
+  ram_rdata[11]
+  ram_rdata[12]
+  ram_rdata[13]
+  ram_rdata[14]
+  ram_rdata[15]
+  ram_rdata[16]
+  ram_rdata[17]
+  ram_rdata[18]
+  ram_rdata[19]
+  ram_rdata[1]
+  ram_rdata[20]
+  ram_rdata[21]
+  ram_rdata[22]
+  ram_rdata[23]
+  ram_rdata[24]
+  ram_rdata[25]
+  ram_rdata[26]
+  ram_rdata[27]
+  ram_rdata[28]
+  ram_rdata[29]
+  ram_rdata[2]
+  ram_rdata[30]
+  ram_rdata[31]
+  ram_rdata[3]
+  ram_rdata[4]
+  ram_rdata[5]
+  ram_rdata[6]
+  ram_rdata[7]
+  ram_rdata[8]
+  ram_rdata[9]
+  simpleuart_reg_dat_do[0]
+  simpleuart_reg_dat_do[10]
+  simpleuart_reg_dat_do[11]
+  simpleuart_reg_dat_do[12]
+  simpleuart_reg_dat_do[13]
+  simpleuart_reg_dat_do[14]
+  simpleuart_reg_dat_do[15]
+  simpleuart_reg_dat_do[16]
+  simpleuart_reg_dat_do[17]
+  simpleuart_reg_dat_do[18]
+  simpleuart_reg_dat_do[19]
+  simpleuart_reg_dat_do[1]
+  simpleuart_reg_dat_do[20]
+  simpleuart_reg_dat_do[21]
+  simpleuart_reg_dat_do[22]
+  simpleuart_reg_dat_do[23]
+  simpleuart_reg_dat_do[24]
+  simpleuart_reg_dat_do[25]
+  simpleuart_reg_dat_do[26]
+  simpleuart_reg_dat_do[27]
+  simpleuart_reg_dat_do[28]
+  simpleuart_reg_dat_do[29]
+  simpleuart_reg_dat_do[2]
+  simpleuart_reg_dat_do[30]
+  simpleuart_reg_dat_do[31]
+  simpleuart_reg_dat_do[3]
+  simpleuart_reg_dat_do[4]
+  simpleuart_reg_dat_do[5]
+  simpleuart_reg_dat_do[6]
+  simpleuart_reg_dat_do[7]
+  simpleuart_reg_dat_do[8]
+  simpleuart_reg_dat_do[9]
+  simpleuart_reg_dat_wait
+  simpleuart_reg_div_do[0]
+  simpleuart_reg_div_do[10]
+  simpleuart_reg_div_do[11]
+  simpleuart_reg_div_do[12]
+  simpleuart_reg_div_do[13]
+  simpleuart_reg_div_do[14]
+  simpleuart_reg_div_do[15]
+  simpleuart_reg_div_do[16]
+  simpleuart_reg_div_do[17]
+  simpleuart_reg_div_do[18]
+  simpleuart_reg_div_do[19]
+  simpleuart_reg_div_do[1]
+  simpleuart_reg_div_do[20]
+  simpleuart_reg_div_do[21]
+  simpleuart_reg_div_do[22]
+  simpleuart_reg_div_do[23]
+  simpleuart_reg_div_do[24]
+  simpleuart_reg_div_do[25]
+  simpleuart_reg_div_do[26]
+  simpleuart_reg_div_do[27]
+  simpleuart_reg_div_do[28]
+  simpleuart_reg_div_do[29]
+  simpleuart_reg_div_do[2]
+  simpleuart_reg_div_do[30]
+  simpleuart_reg_div_do[31]
+  simpleuart_reg_div_do[3]
+  simpleuart_reg_div_do[4]
+  simpleuart_reg_div_do[5]
+  simpleuart_reg_div_do[6]
+  simpleuart_reg_div_do[7]
+  simpleuart_reg_div_do[8]
+  simpleuart_reg_div_do[9]
+  spimem_rdata[0]
+  spimem_rdata[10]
+  spimem_rdata[11]
+  spimem_rdata[12]
+  spimem_rdata[13]
+  spimem_rdata[14]
+  spimem_rdata[15]
+  spimem_rdata[16]
+  spimem_rdata[17]
+  spimem_rdata[18]
+  spimem_rdata[19]
+  spimem_rdata[1]
+  spimem_rdata[20]
+  spimem_rdata[21]
+  spimem_rdata[22]
+  spimem_rdata[23]
+  spimem_rdata[24]
+  spimem_rdata[25]
+  spimem_rdata[26]
+  spimem_rdata[27]
+  spimem_rdata[28]
+  spimem_rdata[29]
+  spimem_rdata[2]
+  spimem_rdata[30]
+  spimem_rdata[31]
+  spimem_rdata[3]
+  spimem_rdata[4]
+  spimem_rdata[5]
+  spimem_rdata[6]
+  spimem_rdata[7]
+  spimem_rdata[8]
+  spimem_rdata[9]
+  spimem_ready
+  spimemio_cfgreg_do[0]
+  spimemio_cfgreg_do[10]
+  spimemio_cfgreg_do[11]
+  spimemio_cfgreg_do[12]
+  spimemio_cfgreg_do[13]
+  spimemio_cfgreg_do[14]
+  spimemio_cfgreg_do[15]
+  spimemio_cfgreg_do[16]
+  spimemio_cfgreg_do[17]
+  spimemio_cfgreg_do[18]
+  spimemio_cfgreg_do[19]
+  spimemio_cfgreg_do[1]
+  spimemio_cfgreg_do[20]
+  spimemio_cfgreg_do[21]
+  spimemio_cfgreg_do[22]
+  spimemio_cfgreg_do[23]
+  spimemio_cfgreg_do[24]
+  spimemio_cfgreg_do[25]
+  spimemio_cfgreg_do[26]
+  spimemio_cfgreg_do[27]
+  spimemio_cfgreg_do[28]
+  spimemio_cfgreg_do[29]
+  spimemio_cfgreg_do[2]
+  spimemio_cfgreg_do[30]
+  spimemio_cfgreg_do[31]
+  spimemio_cfgreg_do[3]
+  spimemio_cfgreg_do[4]
+  spimemio_cfgreg_do[5]
+  spimemio_cfgreg_do[6]
+  spimemio_cfgreg_do[7]
+  spimemio_cfgreg_do[8]
+  spimemio_cfgreg_do[9]
+Warning: There are 152 unconstrained endpoints.
+  extra_irq_out[0]
+  extra_irq_out[10]
+  extra_irq_out[11]
+  extra_irq_out[12]
+  extra_irq_out[13]
+  extra_irq_out[14]
+  extra_irq_out[15]
+  extra_irq_out[16]
+  extra_irq_out[17]
+  extra_irq_out[18]
+  extra_irq_out[19]
+  extra_irq_out[1]
+  extra_irq_out[20]
+  extra_irq_out[21]
+  extra_irq_out[22]
+  extra_irq_out[23]
+  extra_irq_out[24]
+  extra_irq_out[25]
+  extra_irq_out[26]
+  extra_irq_out[27]
+  extra_irq_out[28]
+  extra_irq_out[29]
+  extra_irq_out[2]
+  extra_irq_out[30]
+  extra_irq_out[31]
+  extra_irq_out[3]
+  extra_irq_out[4]
+  extra_irq_out[5]
+  extra_irq_out[6]
+  extra_irq_out[7]
+  extra_irq_out[8]
+  extra_irq_out[9]
+  extra_picosoc_mem_wen[0]
+  extra_picosoc_mem_wen[1]
+  extra_picosoc_mem_wen[2]
+  extra_picosoc_mem_wen[3]
+  extra_simpleuart_reg_dat_re
+  extra_simpleuart_reg_dat_we
+  extra_simpleuart_reg_div_we[0]
+  extra_simpleuart_reg_div_we[1]
+  extra_simpleuart_reg_div_we[2]
+  extra_simpleuart_reg_div_we[3]
+  extra_spimemio_cfgreg_we[0]
+  extra_spimemio_cfgreg_we[1]
+  extra_spimemio_cfgreg_we[2]
+  extra_spimemio_cfgreg_we[3]
+  extra_spimemio_valid
+  iomem_addr[0]
+  iomem_addr[10]
+  iomem_addr[11]
+  iomem_addr[12]
+  iomem_addr[13]
+  iomem_addr[14]
+  iomem_addr[15]
+  iomem_addr[16]
+  iomem_addr[17]
+  iomem_addr[18]
+  iomem_addr[19]
+  iomem_addr[1]
+  iomem_addr[20]
+  iomem_addr[21]
+  iomem_addr[22]
+  iomem_addr[23]
+  iomem_addr[24]
+  iomem_addr[25]
+  iomem_addr[26]
+  iomem_addr[27]
+  iomem_addr[28]
+  iomem_addr[29]
+  iomem_addr[2]
+  iomem_addr[30]
+  iomem_addr[31]
+  iomem_addr[3]
+  iomem_addr[4]
+  iomem_addr[5]
+  iomem_addr[6]
+  iomem_addr[7]
+  iomem_addr[8]
+  iomem_addr[9]
+  iomem_valid
+  iomem_wdata[0]
+  iomem_wdata[10]
+  iomem_wdata[11]
+  iomem_wdata[12]
+  iomem_wdata[13]
+  iomem_wdata[14]
+  iomem_wdata[15]
+  iomem_wdata[16]
+  iomem_wdata[17]
+  iomem_wdata[18]
+  iomem_wdata[19]
+  iomem_wdata[1]
+  iomem_wdata[20]
+  iomem_wdata[21]
+  iomem_wdata[22]
+  iomem_wdata[23]
+  iomem_wdata[24]
+  iomem_wdata[25]
+  iomem_wdata[26]
+  iomem_wdata[27]
+  iomem_wdata[28]
+  iomem_wdata[29]
+  iomem_wdata[2]
+  iomem_wdata[30]
+  iomem_wdata[31]
+  iomem_wdata[3]
+  iomem_wdata[4]
+  iomem_wdata[5]
+  iomem_wdata[6]
+  iomem_wdata[7]
+  iomem_wdata[8]
+  iomem_wdata[9]
+  iomem_wstrb[0]
+  iomem_wstrb[1]
+  iomem_wstrb[2]
+  iomem_wstrb[3]
+  mem_rdata[0]
+  mem_rdata[10]
+  mem_rdata[11]
+  mem_rdata[12]
+  mem_rdata[13]
+  mem_rdata[14]
+  mem_rdata[15]
+  mem_rdata[16]
+  mem_rdata[17]
+  mem_rdata[18]
+  mem_rdata[19]
+  mem_rdata[1]
+  mem_rdata[20]
+  mem_rdata[21]
+  mem_rdata[22]
+  mem_rdata[23]
+  mem_rdata[24]
+  mem_rdata[25]
+  mem_rdata[26]
+  mem_rdata[27]
+  mem_rdata[28]
+  mem_rdata[29]
+  mem_rdata[2]
+  mem_rdata[30]
+  mem_rdata[31]
+  mem_rdata[3]
+  mem_rdata[4]
+  mem_rdata[5]
+  mem_rdata[6]
+  mem_rdata[7]
+  mem_rdata[8]
+  mem_rdata[9]
+  mem_ready
+  simpleuart_reg_dat_sel
+  simpleuart_reg_div_sel
+  spimemio_cfgreg_sel
+checks_report_end
+power_report
+
+===========================================================================
+ report_power
+============================================================================
+======================= Typical Corner ===================================
+
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             4.07e-07   2.39e-14   8.57e-12   4.07e-07  29.0%
+Combinational          9.79e-07   1.44e-08   1.74e-09   9.95e-07  71.0%
+Clock                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  1.39e-06   1.44e-08   1.75e-09   1.40e-06 100.0%
+                          98.8%       1.0%       0.1%
+
+power_report_end
+skew_report
+
+===========================================================================
+report_clock_skew
+============================================================================
+Clock core_clock
+   0.00 source latency _575_/CLK ^
+   0.00 target latency _575_/CLK ^
+   0.00 CRPR
+--------------
+   0.00 setup skew
+
+skew_report_end
+summary_report
+
+===========================================================================
+report_tns
+============================================================================
+tns 0.00
+
+===========================================================================
+report_wns
+============================================================================
+wns 0.00
+
+===========================================================================
+report_worst_slack -max (Setup)
+============================================================================
+worst slack 98.51
+
+===========================================================================
+report_worst_slack -min (Hold)
+============================================================================
+worst slack 1.39
+summary_report_end
+[WARNING] Did not save OpenROAD database!
+Writing SDF to '/openlane/designs/mem_decode/runs/decoder/results/synthesis/mem_decode.sdf'…

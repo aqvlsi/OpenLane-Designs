@@ -1,0 +1,1 @@
+lvs {/openlane/designs/car_park/runs/ayyaz/results/signoff/car_park.spice car_park} {/openlane/designs/car_park/runs/ayyaz/tmp/signoff/31-car_park.pnl.v car_park} /root/.volare/sky130A/libs.tech/netgen/sky130A_setup.tcl /openlane/designs/car_park/runs/ayyaz/logs/signoff/34-car_park.lef.lvs.log -json

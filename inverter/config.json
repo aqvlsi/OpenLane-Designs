@@ -1,0 +1,6 @@
+{
+    "DESIGN_NAME": "inverter",
+    "VERILOG_FILES": "dir::src/*.v",
+    "CLOCK_PERIOD": 10.0,
+    "FP_PDN_MULTILAYER": true
+}
